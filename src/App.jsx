@@ -3,8 +3,14 @@ import Image from "./components/Image";
 import Bio from "./components/Bio";
 import SocialLink from "./components/SocialLinks";
 import Projects from "./components/Projects";
+import { useState } from "react";
 
 export function App() {
+
+  const [showProject, setShowProject]= useState(true)
+
+
+
   const projectRepos = [
     {
       title: "Todo-list-CLI",
@@ -37,7 +43,7 @@ export function App() {
       </div>
 
       {/* render my project repos using presentational props*/}
-      <Projects projectRepos={projectRepos} />
+      {showProject && < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />}
     </div>
   );
 }

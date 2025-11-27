@@ -1,9 +1,14 @@
 import ProjectCard from "./ProjectCard";
 
-function Projects({ projectRepos }) {
+function Projects({ projectRepos,hideProjects}) {
   return (
     <div className="flex flex-col mt-20 items-center">
+
+      <div>
       <h2 className="text-2xl text-[rgb(10,228,217)]  font-normal mb-4">My Github Projects</h2>
+          
+          <button onClick={hideProjects} className="text-2xl text-white">Hide Projects</button>
+      </div>
 
       {projectRepos.length === 0 ? (
         <p>No repo :(</p>
