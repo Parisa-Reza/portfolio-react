@@ -20,6 +20,8 @@ function ProjectCard({ project }) {
 //    setUpvoteCount(upvoteCount+1)
 //   }
 
+
+
 const toggleLike = ()=>{
   setliked((prev)=>!prev) // toggle the previous state
 }
@@ -27,11 +29,11 @@ const toggleLike = ()=>{
 const [liked,setliked]= useState(false);
   return (
     <div className="card border border-gray-400 p-4 rounded shadow w-[300px]">
-      <h3 className="text-xl text-white font-semibold">{project.title}</h3>
+      <h3 className="text-xl text-white font-semibold">{project.name}</h3>
       <p className="text-gray-400">{project.description}</p>
-      <div className="flex mt-7 justify-between items-center">
+      <div className="flex mt-4 justify-between items-center">
         <a
-          href={project.url}
+          href={project.html_url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300  font-semibold underline hover:text-[rgb(10,228,217)]"
