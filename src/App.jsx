@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 import "./App.css";
 import Image from "./components/Image";
 import Bio from "./components/Bio";
 import SocialLink from "./components/SocialLinks";
 import Projects from "./components/Projects";
-import { useState } from "react";
+import ShowProjectBtn from "./components/ShowProjectBtn";
 
 export function App() {
 
-  const [showProject, setShowProject]= useState(true)
-
+  // const [showProject, setShowProject]= useState(true)
+  const [showProject, setShowProject]= useState(false)
 
 
   const projectRepos = [
@@ -41,9 +43,12 @@ export function App() {
           <SocialLink />
         </div>
       </div>
-
+        
       {/* render my project repos using presentational props*/}
-      {showProject && < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />}
+      {/* {showProject && < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />} */}
+   
+       {showProject ? < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />
+       :<ShowProjectBtn showProjectAction={()=> setShowProject(true)}/>}
     </div>
   );
 }

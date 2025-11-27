@@ -1,13 +1,19 @@
 import ProjectCard from "./ProjectCard";
 
-function Projects({ projectRepos,hideProjects}) {
+function Projects({ projectRepos, hideProjects }) {
   return (
-    <div className="flex flex-col mt-20 items-center">
+    <div className="flex flex-col mt-10 items-center">
+      <div className="flex flex-col justify-center items-center mb-10">
+        <h2 className="text-2xl text-[rgb(10,228,217)]  font-normal mb-4">
+          My Github Projects
+        </h2>
 
-      <div>
-      <h2 className="text-2xl text-[rgb(10,228,217)]  font-normal mb-4">My Github Projects</h2>
-          
-          <button onClick={hideProjects} className="text-2xl text-white">Hide Projects</button>
+        <button
+          onClick={hideProjects}
+          className="bg-[rgb(10,228,217)] font-medium px-2 py-2 "
+        >
+          Hide All Projects
+        </button>
       </div>
 
       {projectRepos.length === 0 ? (
