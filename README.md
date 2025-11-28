@@ -5,13 +5,13 @@ I am Parisa Reza. I am an aspiring software engineer. This is my personal portfo
 ## Demo
 
 Check out the live demo of my portfolio here: 
-https://parisarezaportfolio.netlify.app/
+https://parisa-reza.github.io/portfolio-react/
 
 
 ## Template
 
 This portfolio is based on a template from:
-https://parisa-reza.github.io/portfolio-react/
+https://github.com/bongodev/vite-react-js
 ## Technology used
 - React js
 - Vite
