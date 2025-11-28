@@ -16,19 +16,34 @@ export function App() {
   const [projectRepos,setProjectRepos]= useState([])
 
   useEffect(() => {
-    setShowloading(true)
-    axios.get("https://api.github.com/users/Parisa-Reza/repos")
-      .then((response) => {
-        console.log("fetching data", response.data);
-        setProjectRepos(response.data)
-      }).catch((error)=>{
-        alert("cannot fetch data",error)
-      }).finally(()=>{
-        setShowloading(false)
-      })
-      // return(()=>{
-      //   console.log('unmounting repolist from App')
-      // }) // NOT TRIGGERING
+    // setShowloading(true)
+    // axios.get("https://api.github.com/users/Parisa-Reza/repos")
+    //   .then((response) => {
+    //     console.log("fetching data", response.data);
+    //     setProjectRepos(response.data)
+    //   }).catch((error)=>{
+    //     alert("cannot fetch data",error)
+    //   }).finally(()=>{
+    //     setShowloading(false)
+    //   })
+    //   // return(()=>{
+    //   //   console.log('unmounting repolist from App')
+    //   // }) // NOT TRIGGERING
+
+    async function fetchingFunction() {
+      setShowloading(true);
+      try {
+        const response = await axios.get(
+          "https://api.github.com/users/Parisa-Reza/repos"
+        );
+        setProjectRepos(response.data);
+      } catch (error) {
+        alert("cannot fetch data", error);
+      } finally {
+        setShowloading(false);
+      }
+    }
+    fetchingFunction();
   }, []);
 
 
