@@ -1,0 +1,5 @@
+export {default as Image} from "./Image"
+export { default as Bio} from "./Bio"
+export { default as SocialLink} from "./SocialLink"
+export { default as ShowProjectBtn} from "./ShowProjectBtn"
+export * from "./Projects"

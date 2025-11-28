@@ -1,12 +1,7 @@
 import { useState,useEffect } from "react";
-
 import "./App.css";
-import Image from "./components/Image";
-import Bio from "./components/Bio";
-import SocialLink from "./components/SocialLinks";
-import Projects from "./components/Projects";
-import ShowProjectBtn from "./components/ShowProjectBtn";
-import useProjects from "./hooks/useProjects";
+import {Image,Bio,SocialLink,ShowProjectBtn,Projects } from "./components";
+import {useProjects} from "./hooks";
 
 export function App() {
 

@@ -5,7 +5,7 @@ export default function useProjects(){
 const [showLoading, setShowloading]= useState(false)
   const [projectRepos,setProjectRepos]= useState([])
 
-   const fetchingFunction= useCallback( async()=> {  // usecallback hook  caches the function  refernce .
+   const fetchingFunction= useCallback( async()=> {  // usecallback hook  caches the function  reference .
       setShowloading(true);
       try {
         const response = await axios.get(
