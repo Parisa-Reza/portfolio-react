@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 
-function Projects({ projectRepos, hideProjects }) {
+function Projects({ projectRepos, hideProjects, showLoading }) {
   return (
     <div className="flex flex-col mt-10 items-center max-h[60vh] overflow-y-auto gap-6">
       <div className="flex flex-col justify-center items-center mb-10">
@@ -16,8 +16,10 @@ function Projects({ projectRepos, hideProjects }) {
         </button>
       </div>
 
-      {projectRepos.length === 0 ? (
-        <p>No repo :(</p>
+      {showLoading ? (
+        <p className="text-xl text-white"> Loading......</p>
+      ) : projectRepos.length === 0 ? (
+        <p className="text-xl text-white">No repo :(</p>
       ) : (
         <div className="flex gap-4 flex-wrap justify-center">
           {/* App.jsx->projectRepo list -> Projects.jsx -> for every repo (mapping) prop is passing ->ProjectCard.jsx */}

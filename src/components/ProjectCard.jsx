@@ -23,7 +23,7 @@ function ProjectCard({ project }) {
 
 const [liked,setliked]= useState(false); // boolean state
 
-const [reactionStat,setReactionStat]= useState({ //complex state
+const [reactionStat,setReactionStat]= useState({ //complex object state
   liked:0,
   unliked:0,
   timestamps:{
@@ -47,6 +47,10 @@ useEffect(()=>{
 
 useEffect(()=>{
     console.log('ProjectCard Component: useEffect with empty dependency list ')
+
+     return(()=>{
+        console.log('unmounting repolist from projectCard')
+      })
   },[])
 
 
@@ -67,7 +71,7 @@ useEffect(()=>{
 //   ...prevStat
 // }));   
 
-// WHY THIS IS A BLUNDER??
+// WHY IS THIS A BLUNDER??
 
 // reactionStat changes -> useEffect runs
 // useEffect runs -> setReactionStat runs

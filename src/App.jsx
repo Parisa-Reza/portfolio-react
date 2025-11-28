@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 
+import axios from 'axios';
 import "./App.css";
 import Image from "./components/Image";
 import Bio from "./components/Bio";
@@ -11,16 +12,23 @@ export function App() {
 
   // const [showProject, setShowProject]= useState(true)
   const [showProject, setShowProject]= useState(false)
+  const [showLoading, setShowloading]= useState(false)
   const [projectRepos,setProjectRepos]= useState([])
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Parisa-Reza/repos")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("fetching data", data);
-        setProjectRepos(data)
-      });
-      
+    setShowloading(true)
+    axios.get("https://api.github.com/users/Parisa-Reza/repos")
+      .then((response) => {
+        console.log("fetching data", response.data);
+        setProjectRepos(response.data)
+      }).catch((error)=>{
+        alert("cannot fetch data",error)
+      }).finally(()=>{
+        setShowloading(false)
+      })
+      // return(()=>{
+      //   console.log('unmounting repolist from App')
+      // }) // NOT TRIGGERING
   }, []);
 
 
@@ -41,7 +49,7 @@ export function App() {
       {/* render my project repos using presentational props*/}
       {/* {showProject && < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />} */}
    
-       {showProject ? < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />
+       {showProject ? < Projects projectRepos={projectRepos} showLoading={showLoading} hideProjects={()=> setShowProject(false)} />
        :<ShowProjectBtn showProjectAction={()=> setShowProject(true)}/>}
     </div>
   );
