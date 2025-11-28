@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useCallback } from "react";
 
 import axios from 'axios';
 import "./App.css";
@@ -15,6 +15,26 @@ export function App() {
   const [showLoading, setShowloading]= useState(false)
   const [projectRepos,setProjectRepos]= useState([])
 
+   const fetchingFunction= useCallback( async()=> {  // usecallback hook  caches the function  refernce .
+      setShowloading(true);
+      try {
+        const response = await axios.get(
+          "https://api.github.com/users/Parisa-Reza/repos"
+        );
+        setProjectRepos(response.data);
+      } catch (error) {
+        alert("cannot fetch data", error);
+      } finally {
+        setShowloading(false);
+      }
+    },[] )
+
+
+
+
+
+
+
   useEffect(() => {
     // setShowloading(true)
     // axios.get("https://api.github.com/users/Parisa-Reza/repos")
@@ -30,21 +50,21 @@ export function App() {
     //   //   console.log('unmounting repolist from App')
     //   // }) // NOT TRIGGERING
 
-    async function fetchingFunction() {
-      setShowloading(true);
-      try {
-        const response = await axios.get(
-          "https://api.github.com/users/Parisa-Reza/repos"
-        );
-        setProjectRepos(response.data);
-      } catch (error) {
-        alert("cannot fetch data", error);
-      } finally {
-        setShowloading(false);
-      }
-    }
+    // async function fetchingFunction() {
+    //   setShowloading(true);
+    //   try {
+    //     const response = await axios.get(
+    //       "https://api.github.com/users/Parisa-Reza/repos"
+    //     );
+    //     setProjectRepos(response.data);
+    //   } catch (error) {
+    //     alert("cannot fetch data", error);
+    //   } finally {
+    //     setShowloading(false);
+    //   }
+    // }
     fetchingFunction();
-  }, []);
+  }, [fetchingFunction]);
 
 
   useEffect(()=>{
