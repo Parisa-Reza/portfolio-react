@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useCallback } from "react";
 
 function ReactionButton ({reaction,toggleLike}){
   return (
@@ -31,10 +31,6 @@ const [reactionStat,setReactionStat]= useState({ //complex object state
   lastUnlikes:null
   }
 })
-
-
-
-
 
 // for understading useEffect hook
 useEffect(()=>{
@@ -83,7 +79,7 @@ useEffect(()=>{
 
 
 
-const toggleLike = ()=>{
+const toggleLike = useCallback(()=>{
   setliked((prev)=>!prev) // toggle the previous state
   const newStat = structuredClone(reactionStat);  // without structured clone, reference wont be changed so, useEffect depended on reactionStat wont be triggered
   if(!liked){
@@ -95,7 +91,7 @@ const toggleLike = ()=>{
   }
 
   setReactionStat(newStat)
-}
+},[liked,reactionStat])
 
   return (
     <div className="card border border-gray-400 p-4 rounded shadow w-[300px]">

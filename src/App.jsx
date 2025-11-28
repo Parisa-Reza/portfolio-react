@@ -1,71 +1,18 @@
-import { useState,useEffect, useCallback } from "react";
+import { useState,useEffect } from "react";
 
-import axios from 'axios';
 import "./App.css";
 import Image from "./components/Image";
 import Bio from "./components/Bio";
 import SocialLink from "./components/SocialLinks";
 import Projects from "./components/Projects";
 import ShowProjectBtn from "./components/ShowProjectBtn";
+import useProjects from "./hooks/useProjects";
 
 export function App() {
 
   // const [showProject, setShowProject]= useState(true)
   const [showProject, setShowProject]= useState(false)
-  const [showLoading, setShowloading]= useState(false)
-  const [projectRepos,setProjectRepos]= useState([])
-
-   const fetchingFunction= useCallback( async()=> {  // usecallback hook  caches the function  refernce .
-      setShowloading(true);
-      try {
-        const response = await axios.get(
-          "https://api.github.com/users/Parisa-Reza/repos"
-        );
-        setProjectRepos(response.data);
-      } catch (error) {
-        alert("cannot fetch data", error);
-      } finally {
-        setShowloading(false);
-      }
-    },[] )
-
-
-
-
-
-
-
-  useEffect(() => {
-    // setShowloading(true)
-    // axios.get("https://api.github.com/users/Parisa-Reza/repos")
-    //   .then((response) => {
-    //     console.log("fetching data", response.data);
-    //     setProjectRepos(response.data)
-    //   }).catch((error)=>{
-    //     alert("cannot fetch data",error)
-    //   }).finally(()=>{
-    //     setShowloading(false)
-    //   })
-    //   // return(()=>{
-    //   //   console.log('unmounting repolist from App')
-    //   // }) // NOT TRIGGERING
-
-    // async function fetchingFunction() {
-    //   setShowloading(true);
-    //   try {
-    //     const response = await axios.get(
-    //       "https://api.github.com/users/Parisa-Reza/repos"
-    //     );
-    //     setProjectRepos(response.data);
-    //   } catch (error) {
-    //     alert("cannot fetch data", error);
-    //   } finally {
-    //     setShowloading(false);
-    //   }
-    // }
-    fetchingFunction();
-  }, [fetchingFunction]);
-
+  const {showLoading,projectRepos} = useProjects(); // used custom hooks
 
   useEffect(()=>{
     console.log('App Component: useEffect without dependency list ')
