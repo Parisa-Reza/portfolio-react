@@ -1,29 +1,19 @@
-# bongoDev Vite + React + Tailwind CSS Template
+# My React Portfolio
 
-A modern React starter template powered by Vite and Tailwind CSS v4.
+I am Parisa Reza. I am an aspiring software engineer. This is my personal portfolio website, built using **React.js**. The portfolio showcases my projects.
 
-## Tech Stack
+## Demo
 
-- **React 19** - UI library
-- **Vite 7** - Build tool and dev server
-- **Tailwind CSS 4** - Utility-first CSS framework
+Check out the live demo of my portfolio here: 
+https://parisarezaportfolio.netlify.app/
 
-## Getting Started
 
-1. Install dependencies:
-```bash
-npm install
-```
+## Template
 
-2. Run the development server:
-```bash
-npm run dev
-```
+This portfolio is based on a template from:
+https://parisa-reza.github.io/portfolio-react/
+## Technology used
+- React js
+- Vite
+- Tailwind CSS
 
-The app will be available at `http://localhost:5175`
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
