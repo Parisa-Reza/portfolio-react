@@ -1,7 +1,8 @@
 // data router
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import { HomePage, RootLayout } from "../pages";
+import { Experience, HomePage, RootLayout } from "../pages";
+import { Attachments, Certifications } from "../pages/experience";
 
 const router = createBrowserRouter(
   [
@@ -11,11 +12,20 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
-          element: <HomePage/>,
+          element: <HomePage />,
         },
         {
           path: "experience",
-          element: <div className="">Certification,Industrial Attachment</div>,
+          element: <Experience />,
+
+          children: [
+            { index: true, element: <Navigate to="certifications" replace /> },
+            {
+              path: "certifications",
+              element: <Certifications />,
+            },
+            { path: "attachments", element: <Attachments /> },
+          ],
         },
         {
           path: "about",
