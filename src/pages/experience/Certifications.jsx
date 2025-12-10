@@ -1,63 +1,48 @@
+import { CertificationCard } from "./CertifiactionCard";
+
 export const Certifications = () => {
+
+ const certificateList = [
+  {
+    id: 1,
+    title: "Certificate 1",
+    issuer: "Lorem Academy",
+    date: "2024",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+  },
+  {
+    id: 2,
+    title: "Certificate 2",
+    issuer: "Ipsum Institute",
+    date: "2023",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam."
+  },
+  {
+    id: 3,
+    title: "Certificate 3",
+    issuer: "Dolor University",
+    date: "2022",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit."
+  },
+  {
+    id: 4,
+    title: "Certificate 4",
+    issuer: "Sit Amet Center",
+    date: "2021",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident."
+  },
+];
+
+
   return (
-    <div className="flex flex-col mx-auto px-4 py-12">
+    <div className="flex flex-col mx-auto px-4 py-12 ">
       <h2 className="text-2xl font-semibold text-gray-200 mb-8 text-center">
         Certifications
       </h2>
-
-      <div className="flex flex-col gap-6 ">
-        
-        <div className="bg-[#111] border border-gray-800 rounded-xl p-5 h-[250px] hover:border-gray-600 transition">
-          <h3 className="text-lg font-medium text-gray-100 mb-2">
-            Certificate 1
-          </h3>
-          <p className="text-sm text-gray-400 mb-3">
-            Issued by Lorem • 2024
-          </p>
-          <p className="text-sm text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quaerat esse nesciunt tenetur consequuntur labore?
-          </p>
-        </div>
-
-       
-        <div className="bg-[#111] border border-gray-800 rounded-xl p-5 h-[250px] hover:border-gray-600 transition">
-          <h3 className="text-lg font-medium text-gray-100 mb-2">
-            Certificate 2
-          </h3>
-          <p className="text-sm text-gray-400 mb-3">
-            Issued by Lorem • 2024
-          </p>
-          <p className="text-sm text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nisi doloremque quas ducimus quisquam deleniti!
-          </p>
-        </div>
-
-
-        <div className="bg-[#111] border border-gray-800 rounded-xl p-5 h-[250px] hover:border-gray-600 transition">
-          <h3 className="text-lg font-medium text-gray-100 mb-2">
-            Certificate 3
-          </h3>
-          <p className="text-sm text-gray-400 mb-3">
-            Issued by Lorem • 2023
-          </p>
-          <p className="text-sm text-gray-500">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit fugit fugiat nulla sapiente repellendus!
-          </p>
-        </div>
-
-       
-        <div className="bg-[#111] border border-gray-800 rounded-xl p-5 h-[250px] hover:border-gray-600 transition">
-          <h3 className="text-lg font-medium text-gray-100 mb-2">
-            Certificate 4
-          </h3>
-          <p className="text-sm text-gray-400 mb-3">
-            Issued by Lorem • 2023
-          </p>
-          <p className="text-sm text-gray-500">
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, unde. Dicta rerum saepe voluptate enim.
-          </p>
-        </div>
-
+      <div>
+        {certificateList.map((certificate)=>
+          <CertificationCard key={certificate.id} certificate={certificate}/>
+        )}
       </div>
     </div>
   );

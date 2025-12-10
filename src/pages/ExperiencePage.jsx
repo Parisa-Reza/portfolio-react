@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router";
-import { Certifications } from "./experience";
 export const Experience = () => {
   return (
     <div className="bg-gradient-to-r from-[rgb(25,26,25)] to-[rgb(92,121,118)]">
