@@ -1,6 +1,5 @@
 import { useState,useEffect } from "react";
 import {Image,Bio,SocialLink,ShowProjectBtn,Projects } from "../components";
-// import {useProjects} from "../hooks";
 import { ProjectProvider } from "../Contexts/ProjectContext";
 
 export function HomePage() {

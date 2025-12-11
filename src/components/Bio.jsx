@@ -1,9 +1,10 @@
-import { useContext } from "react";
-import { ProjectContext } from "../Contexts/ProjectContext";
+// import { useContext } from "react";
+// import { ProjectContext } from "../Contexts/ProjectContext";
+import { useProjectContext } from "../hooks";
 
 function Bio() {
 
-  const {showLoading,projectRepos}=useContext(ProjectContext)
+  const {showLoading,projectRepos}=useProjectContext();
   return (
     <div>
       <h1 className="text-4xl text-[rgb(10,228,217)]  mb-4 ">Parisa Reza</h1>
