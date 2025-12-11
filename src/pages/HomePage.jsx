@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import {Image,Bio,SocialLink,ShowProjectBtn,Projects } from "../components";
 import {useProjects} from "../hooks";
+import { ProjectContext } from "../Contexts/ProjectContext";
 
 export function HomePage() {
 
@@ -13,10 +14,13 @@ export function HomePage() {
   })
 
   return (
+
+    <ProjectContext.Provider value={{showLoading,projectRepos}}>
     <div className="flex flex-col bg-gradient-to-r from-[rgb(25,26,25)] to-[rgb(92,121,118)] gap-8 items-center justify-center h-screen">
       <div className="flex gap-4 items-center mt-20">
         <Image />
         <div className="flex flex-col ">
+
           <Bio />
           <SocialLink />
         </div>
@@ -25,8 +29,9 @@ export function HomePage() {
       {/* render my project repos using presentational props*/}
       {/* {showProject && < Projects projectRepos={projectRepos} hideProjects={()=> setShowProject(false)} />} */}
    
-       {showProject ? < Projects projectRepos={projectRepos} showLoading={showLoading} hideProjects={()=> setShowProject(false)} />
+       {showProject ? < Projects  hideProjects={()=> setShowProject(false)} />
        :<ShowProjectBtn showProjectAction={()=> setShowProject(true)}/>}
     </div>
+    </ProjectContext.Provider>
   );
 }
