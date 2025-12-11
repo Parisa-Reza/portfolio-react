@@ -1,12 +1,12 @@
-import { Link } from "react-router"
+
 export const AttachmentCard = ({attachment}) => {
   return (
-    <div className=" border border-white  p-5 h-[300px] hover:border-gray-600 transition flex flex-col justify-between">
+    <div className=" border border-white  p-5 h-[300px] hover:border-[rgb(10,228,217)] transition flex flex-col justify-between">
   <div>
-    <h3 className="text-lg font-medium text-gray-100 mb-2">
+    <h3 className="text-xl font-medium text-gray-100 mb-2">
       {attachment.companyName}
     </h3>
-    <p className="text-md text-gray-400 mb-1">
+    <p className="text-md text-gray-200 mb-1">
       <span className="font-semibold">Role:</span> {attachment.role}
     </p>
     <p className="text-md text-gray-400 mb-1">
@@ -16,14 +16,14 @@ export const AttachmentCard = ({attachment}) => {
       <span className="font-semibold">Location:</span> {attachment.location}
     </p>
 
-    <p className="text-md text-gray-500 mb-2">
+    <p className="text-md text-gray-400 mb-2">
       <span className="font-semibold">Project:</span> {attachment.projectTitle}
     </p>
-    <p className="text-md text-gray-500 mb-2">
+    <p className="text-md text-gray-400 mb-2">
       {attachment.description}
     </p>
 
-    <p className="text-md text-gray-500 mb-2">
+    <p className="text-md text-gray-400 mb-2">
       <span className="font-semibold">Technologies:</span> {attachment.technologiesUsed.join(", ")}
     </p>
   </div>

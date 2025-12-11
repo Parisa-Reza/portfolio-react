@@ -1,3 +1,6 @@
 export * from "./RootLayout"
 export * from "./HomePage"
 export * from "./ExperiencePage"
+export * from "./experience"
+export * from "./AboutPage"
+export * from "./ContactPage"

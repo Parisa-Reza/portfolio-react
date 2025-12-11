@@ -1,8 +1,9 @@
-// data router
+// data mode
 import { createBrowserRouter, Navigate } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import { Experience, HomePage, RootLayout } from "../pages";
-import { Attachments, Certifications } from "../pages/experience";
+import { Experience, HomePage, RootLayout ,Attachmentss, Certificationss, AboutPage, ContactPage} from "../pages";
+// 
+
 
 const router = createBrowserRouter(
   [
@@ -22,18 +23,18 @@ const router = createBrowserRouter(
             { index: true, element: <Navigate to="certifications" replace /> },
             {
               path: "certifications",
-              element: <Certifications />,
+              element: <Certificationss />,
             },
-            { path: "attachments", element: <Attachments /> },
+            { path: "attachments", element: <Attachmentss /> },
           ],
         },
         {
           path: "about",
-          element: <div className="">About</div>,
+          element: <div className=""><AboutPage/></div>,
         },
         {
           path: "contact",
-          element: <div className="">Contact</div>,
+          element: <div className=""><ContactPage/></div>,
         },
       ],
     },

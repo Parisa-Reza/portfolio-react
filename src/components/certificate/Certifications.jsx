@@ -35,11 +35,11 @@ export const Certifications = () => {
 
 
   return (
-    <div className="flex flex-col mx-auto px-4 py-12 ">
-      <h2 className="text-2xl font-semibold text-gray-200 mb-8 text-center">
-        Certifications
-      </h2>
-      <div>
+     <div className="flex flex-col gap-20 mx-auto px-4 py-12 ">
+          <h2 className="text-4xl font-semibold text-gray-200 mb-8 text-center">
+      Certifications
+          </h2>
+      <div className="flex flex-col gap-10">
         {certificateList.map((certificate)=>
           <CertificationCard key={certificate.id} certificate={certificate}/>
         )}

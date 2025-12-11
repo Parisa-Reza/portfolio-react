@@ -1,2 +1,2 @@
-export * from "./Attachments"
-export * from "./Certifications"
+export * from "./AttachmentsPage"
+export * from "./CertificationPage"
