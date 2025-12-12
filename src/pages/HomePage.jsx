@@ -2,9 +2,10 @@ import { useState,useEffect } from "react";
 import {Image,Bio,SocialLink,ShowProjectBtn,Projects } from "../components";
 import { ProjectProvider } from "../Contexts/ProjectContext";
 
+
 export function HomePage() {
 
-  // const [showProject, setShowProject]= useState(true)
+  //const [showProject, setShowProject]= useState(true)
   const [showProject, setShowProject]= useState(false)
   // const {showLoading,projectRepos} = useProjects(); // used custom hooks
 

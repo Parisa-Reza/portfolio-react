@@ -1,8 +1,8 @@
 // import { useContext } from "react";
 // import { ProjectContext } from "../Contexts/ProjectContext";
-import { useProjectContext } from "../hooks";
+import { useProjectContext } from "../../hooks";
 
-function Bio() {
+export function Bio() {
 
   const {showLoading,projectRepos}=useProjectContext();
   return (
@@ -16,4 +16,4 @@ function Bio() {
   );
 }
 
-export default Bio;
+

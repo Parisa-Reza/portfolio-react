@@ -2,7 +2,7 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import { Experience, HomePage, RootLayout ,Attachmentss, Certificationss, AboutPage, ContactPage} from "../pages";
-// 
+
 
 
 const router = createBrowserRouter(
@@ -30,11 +30,11 @@ const router = createBrowserRouter(
         },
         {
           path: "about",
-          element: <div className=""><AboutPage/></div>,
+          element: <AboutPage/>,
         },
         {
           path: "contact",
-          element: <div className=""><ContactPage/></div>,
+          element: <ContactPage/>,
         },
       ],
     },

@@ -4,7 +4,9 @@ export const Header = () => {
   return (
  
     <header className="bg-gradient-to-r from-[rgb(25,26,25)] to-[rgb(92,121,118)] text-white px-16 py-6 flex items-center justify-between">
-      <h1 className="text-3xl font-light">Parisa Reza</h1>
+      <h1 className="text-3xl font-light">
+         <Link to={"/"}>Parisa Reza</Link>
+      </h1>
 
       <nav>
         <ul className="flex gap-20 text-xl font-light">
