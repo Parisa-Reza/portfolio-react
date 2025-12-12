@@ -1,7 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import { useProjectContext } from "../../hooks";
 
-function Projects({hideProjects }) {
+export function Projects({hideProjects }) {
 
 const {projectRepos,showLoading} = useProjectContext();
   return (

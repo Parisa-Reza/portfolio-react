@@ -1,15 +1,19 @@
 import { Outlet } from "react-router";
 import { Footer, Header } from "../components/nav";
+import { ProjectProvider } from "../Contexts/ProjectContext";
+
 export const RootLayout = () => {
   return (
-    <div className="">
-      <Header />
+    <ProjectProvider>
+      <div className="">
+        <Header />
 
-      <main className="">
-        <Outlet />{" "}
-      </main>
+        <main className="">
+          <Outlet />{" "}
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ProjectProvider>
   );
 };

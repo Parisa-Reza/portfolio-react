@@ -1,7 +1,7 @@
 // data mode
 import { createBrowserRouter, Navigate } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import { Experience, HomePage, RootLayout ,Attachmentss, Certificationss, AboutPage, ContactPage} from "../pages";
+import { Experience, HomePage, RootLayout ,Attachmentss, Certificationss, AboutPage, ContactPage, ProjectPage} from "../pages";
 
 
 
@@ -35,6 +35,10 @@ const router = createBrowserRouter(
         {
           path: "contact",
           element: <ContactPage/>,
+        },
+        {
+          path: "projects/:projectName",
+          element: <ProjectPage/>,
         },
       ],
     },
