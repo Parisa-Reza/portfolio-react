@@ -1,4 +1,5 @@
 import { useState,useEffect, useCallback } from "react";
+import { Link } from "react-router";
 
 function ReactionButton ({reaction,toggleLike}){
   return (
@@ -98,14 +99,18 @@ const toggleLike = useCallback(()=>{
       <h3 className="text-xl text-white font-semibold">{project.name}</h3>
       <p className="text-gray-400">{project.description}</p>
       <div className="flex mt-4 justify-between items-center">
-        <a
+        {/* <a
           href={project.html_url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300  font-semibold underline hover:text-[rgb(10,228,217)]"
         >
           View on GitHub
-        </a>
+        </a> */}
+
+        
+        <Link className="text-gray-300  font-semibold underline hover:text-[rgb(10,228,217)]" to={`/projects/${project.name}` } >View Project Details </Link>
+
 
         {/* <button
           className="bg-[rgb(10,228,217)] font-semibold px-1 py-1 rounded "

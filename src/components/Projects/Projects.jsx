@@ -1,6 +1,9 @@
 import ProjectCard from "./ProjectCard";
+import { useProjectContext } from "../../hooks";
 
-function Projects({ projectRepos, hideProjects, showLoading }) {
+export function Projects({hideProjects }) {
+
+const {projectRepos,showLoading} = useProjectContext();
   return (
     <div className="flex flex-col mt-10 items-center max-h[60vh] overflow-y-auto gap-6">
       <div className="flex flex-col justify-center items-center mb-10">

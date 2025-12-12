@@ -1,4 +1,4 @@
-function SocialLink() {
+export function SocialLink() {
   return (
     <ul className="flex gap-4">
       <li>
@@ -37,4 +37,3 @@ function SocialLink() {
   );
 }
 
-export default SocialLink;
